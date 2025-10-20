@@ -36,10 +36,10 @@ Make Plex Web feel smarter. Set your own delay between episodes, boost the volum
 ### Install from source
 
 1. Clone the repo  
-   ```bash
-   git clone https://github.com/<your-user>/<your-repo>.git
-   cd <your-repo>
-   ```
+```bash
+git clone https://github.com/kl3mta3/plex-player-experience.git
+cd plex-player-experience
+```
 2. Load unpacked  
    - Go to `chrome://extensions`  
    - Turn on Developer mode  
