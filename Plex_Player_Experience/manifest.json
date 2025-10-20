@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Plex Player Experience",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo2Ks4f/FNdGe8J1IHes+FDv826TWVG8tQPIv5vCeO7k+NRDUNxrO3V5X9xCo5q5tndFQwGLmyHZZaT7oGx3gfO7y7I7Z+HLnsCH759FGSjJP73QsnDpEUzhzxOIX5udf8r2h0iGbTuQoGvFb8s2KyIIj5fAvcUuTju7H752gfhcm3HOnLpcjEEYBafBVVc1pd7XnSzHshYBrifCCJbG+G7dG2mR7oU2MjB19WW13UocDLkIWw4Hg8S1VI/Hfjg0wjmDf2MhvgG9nWWuHELZbamULUgQTaXgqlwXn/dmLfyeCYI/ovCpr54iGbLochJj5OkK24rfNFfGvliebNIDIGwIDAQAB",
+  "description": "Custom next episode delay, sleep timer, audio boost and auto skip for intros and credits on Plex Web.",
+  "version": "1.5.2",
+  "permissions": [
+    "storage",
+	"scripting"
+  ],
+  "host_permissions": [
+    "https://app.plex.tv/*",
+    "https://*.plex.direct/*",
+    "http://*.plex.direct/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "optional_host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.plex.tv/*",
+        "https://*.plex.direct/*",
+        "http://*.plex.direct/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Plex Player Experience",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "128": "assets/icon128.png"
+  }
+}

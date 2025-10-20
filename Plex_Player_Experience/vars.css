@@ -1,0 +1,9 @@
+/* vars.css */
+:root {
+  --plex-bg: #252425;
+  --plex-gold: #ffde00;
+  --plex-text:#f1c200;
+  --plex-title:#fff;
+  --plex-toggle-off:#999999;
+   --plex-toggle-on:#34b728;
+}

@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Plex Player Experience</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1 class="white-title">Ple<span class="gold-text">x</span></h1>
+		<div class="row">
+            <h2> Player Experience</h2>
+            <label class="switch">
+              <input type="checkbox" id="masterEnable" />
+              <span class="slider"></span>
+            </label>
+        </div>
+     <hr/>
+      <!-- Player Experience -->
+      <details class="panel" id="panel-experience" open>
+        <summary class="panel-summary">
+          <span class="plex-text">Playback Options</span>
+          <span class="caret" aria-hidden="true"></span>
+        </summary>
+        <div class="panel-body">
+          <label class="row">
+            <h4 class="plex-text">Next episode delay</h4>
+            <select id="nextDelay">
+              <option value="10" class="white-text">10 sec</option>
+              <option value="5" class="white-text">5 sec</option>
+              <option value="3" class="white-text">3 sec</option>
+              <option value="0" class="white-text">Instant</option>
+            </select>
+          </label>
+
+          <div class="row">
+            <h4 class="plex-text">Auto skip intro</h4>
+            <label class="switch">
+              <input type="checkbox" id="autoSkipIntro" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <h4 class="plex-text">Auto skip credits</h4>
+            <label class="switch">
+              <input type="checkbox" id="autoSkipCredits" />
+              <span class="slider"></span>
+            </label>
+          </div>
+		  <span>⚙️</span> <a href="#" id="openOptions" class="white-text">Advanced Settings</a>
+        </div>
+      </details>
+
+      <!-- Volume Booster -->
+      <details class="panel" id="panel-boost">
+        <summary class="panel-summary">
+          <span class="plex-text">Volume Booster</span>
+          <span class="caret" aria-hidden="true"></span>
+        </summary>
+        <div class="panel-body">
+          <p class="white-text" style="margin:0 0 6px 0; opacity:.9">
+            Use the slider to boost this tab
+          </p>
+          <label class="row">
+            <span class="plex-text">Volume</span>
+            <!-- keep your min/max as you have them -->
+            <input id="boost" type="range" min="120" max="1000" step="5" />
+          </label>
+          <div class="row" style="justify-content:flex-end; margin-top:-2px">
+            <span id="boostLabel" class="white-text">100 %</span>
+          </div>
+        </div>
+      </details>
+
+      <!-- Sleep Timer -->
+      <details class="panel" id="panel-sleep">
+        <summary class="panel-summary">
+          <span class="plex-text">Sleep Timer</span>
+          <span class="caret" aria-hidden="true"></span>
+        </summary>
+        <div class="panel-body">
+          <h4 class="pause-text">(Pauses Video)</h4>
+          <label class="row">
+            <span class="plex-text">Sleep minutes</span>
+            <input id="sleepMinutes" type="number" min="0" step="1" placeholder="0" />
+          </label>
+          <div class="actions">
+            <button id="startNowBtn" title="Start sleep timer right now with the saved minutes">
+              Start Sleep Now
+            </button>
+     
+          </div>
+          <div id="saveStatus" aria-live="polite"></div>
+        </div>
+      </details>
+	  
+	  
+	  
+	      <footer class="footer">
+      <span class="copy">
+        © <span id="year"></span> Plex Player Experience • v<span id="extVer"></span>
+      </span>
+    </footer>
+	  
+    </div>
+
+
+
+    <script src="popup.js"></script>
+  </body>
+</html>
+
+
+
+
+<!-- <!doctype html> -->
+<!-- <html> -->
+  <!-- <head> -->
+    <!-- <meta charset="utf-8" /> -->
+    <!-- <title>Plex Player Experience</title> -->
+    <!-- <link rel="stylesheet" href="popup.css" /> -->
+  <!-- </head> -->
+  <!-- <body> -->
+    <!-- <div class="wrap"> -->
+      <!-- <h1 class="white-title" >Ple<span class="gold-text">x</span></h1><h2> Player Experience</h2> -->
+
+      <!-- <label class="row"> -->
+        <!-- <h4 class="plex-text">Next episode delay</h4> -->
+        <!-- <select id="nextDelay"> -->
+          <!-- <option value="10" class="white-text">10 sec</option> -->
+          <!-- <option value="5" class="white-text">5 sec</option> -->
+          <!-- <option value="3" class="white-text">3 sec</option> -->
+          <!-- <option value="0" class="white-text">Instant</option> -->
+        <!-- </select> -->
+      <!-- </label> -->
+
+      <!-- <div class="row"> -->
+	   <!-- <h4 class="plex-text">Auto skip intro</h4> -->
+        <!-- <label class="switch"> -->
+          <!-- <input type="checkbox" id="autoSkipIntro" /> -->
+          <!-- <span class="slider"></span> -->
+        <!-- </label> -->
+      <!-- </div> -->
+
+      <!-- <div class="row"> -->
+	   <!-- <h4 class="plex-text">Auto skip credits</h4> -->
+        <!-- <label class="switch"> -->
+          <!-- <input type="checkbox" id="autoSkipCredits" /> -->
+          <!-- <span class="slider"></span> -->
+        <!-- </label> -->
+      <!-- </div> -->
+
+      <!-- <hr /> -->
+
+	<!-- <div class="row header-tight"> -->
+	  <!-- <h2 class="plex-text">Volume Booster</h2> -->
+	<!-- </div> -->
+	<!-- <p class="white-text" style="margin:0 0 6px 0; opacity:.9">Use the slider to boost this tab</p> -->
+
+	<!-- <label class="row"> -->
+	  <!-- <span class="plex-text">Volume</span> -->
+	  
+	  <!-- <input id="boost" type="range" min="120" max="1000" step="5" /> -->
+	<!-- </label> -->
+	<!-- <div class="row" style="justify-content:flex-end; margin-top:-2px"> -->
+	  <!-- <span id="boostLabel" class="white-text">100 %</span> -->
+	<!-- </div> -->
+
+	  <!-- <hr /> -->
+	<!-- <div class="row header-tight"> -->
+	  <!-- <h2 class="plex-text">Sleep Timer</h2> -->
+	<!-- </div> -->
+	<!-- <h4 class="pause-text">(Pauses Video)</h4> -->
+		<!-- <br> -->
+      <!-- <label class="row"> -->
+        <!-- <span class="plex-text">Sleep minutes</span> -->
+        <!-- <input id="sleepMinutes" type="number" min="0" step="1" placeholder="0" /> -->
+      <!-- </label> -->
+		<!-- <br> -->
+      <!-- <div class="actions"> -->
+       
+        <!-- <button id="startNowBtn" title="Start sleep timer right now with the saved minutes">Start Sleep Now</button> -->
+        <!-- <a href="#" id="openOptions" class="white-text" >More settings</a> -->
+      <!-- </div> -->
+	  
+	  <!-- <div id="saveStatus" aria-live="polite"></div> -->
+	  
+	  
+    <!-- </div> -->
+	
+	<!-- <br> -->
+		<!-- <footer class="footer"> -->
+       <!-- <span class="copy"> -->
+		<!-- © <span id="year"></span> Plex Player Experience -->
+		<!-- • v<span id="extVer"></span> -->
+		<!-- </span> -->
+	  <!-- </footer> -->
+	<!-- <br> -->
+    <!-- <script src="popup.js"></script> -->
+  <!-- </body> -->
+<!-- </html> -->

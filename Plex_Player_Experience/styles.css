@@ -1,0 +1,14 @@
+@import url("../vars.css");  
+
+.plex-buddy-panel {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: var(--plex-bg) !important;
+  color: var(--plex-gold) !important;
+  border: 1px solid var(--plex-gold) !important;
+  border-radius: 12px;
+  padding: 12px 14px;
+  z-index: 999998;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}

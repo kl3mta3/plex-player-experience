@@ -1,0 +1,75 @@
+  <!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>Plex Player Experience Settings</title>
+      <link rel="stylesheet" href="options.css" />
+    </head>
+    <body>
+      <main class="wrap">
+         <h1 class="white-title" >Ple<span class="gold-text">x</span></h1><h2 class="white-text"> Player Experience Settings</h2>
+
+        <section class="card">
+          <h2 class="plex-text">Next episode delay</h2>
+          <p class="white-text">Choose how long to wait between episodes on the Up Next screen.</p>
+          <select id="nextDelay">
+          <option value="10" class="white-text">10 sec</option>
+          <option value="5" class="white-text">5 sec</option>
+          <option value="3" class="white-text">3 sec</option>
+          <option value="0" class="white-text">Instant</option>
+          </select>
+        </section>
+
+        <section class="card">
+          <h2>Auto skip</h2>
+          <label class="row">
+            <input type="checkbox" id="autoSkipIntro" />
+            <h4 class="white-text">Auto skip intro</h4>
+          </label>
+          <label class="row">
+            <input type="checkbox" id="autoSkipCredits" />
+             <h4 class="white-text">Auto skip credits</h4>
+          </label>
+        </section>
+
+        <section class="card">
+          <h2>Sleep timer</h2>
+          <label class="row">
+            <input type="checkbox" id="sleepEnabled" />
+            <h4 class="white-text">Enable sleep timer by default</h4>
+          </label>
+          <label class="row">
+            <span>Minutes</span>
+            <input id="sleepMinutes" type="number" min="0" step="1" placeholder="0" />
+          </label>
+          <button id="startNowBtn" title="Start sleep timer now in the active Plex tab">Start Sleep Now</button>
+        </section>
+
+        <section class="card">
+          <h2>Custom Plex sites</h2>
+          <p class="white-text">Add your custom domains or IPs here, one per line, pattern must include scheme and end with /*. Examples:</p>
+          <pre class="hint">https://plex.mydomain.com/*
+http://76.12.34.56/*</pre>
+          <textarea  class="white-text" id="sites" rows="6" placeholder="https://plex.mydomain.com/*&#10;http://76.12.34.56/*"></textarea>
+          <div class="row">
+            <button id="requestPermsBtn" title="Request permission for the above origins">Grant Access</button>
+            <span id="permStatus"></span>
+          </div>
+          <p class="white-text">After granting access, click Save. The extension will inject on those sites without reloading the extension.</p>
+        </section>
+
+        <footer>
+          <button id="saveBtn">Save</button>
+        </footer>
+      </main>
+      <script src="options.js"></script>
+	  
+	  <footer class="footer">
+       <span class="copy">
+		© <span id="year"></span> Plex Player Experience
+		• v<span id="extVer"></span>
+		</span>
+	  </footer>
+	  <br>
+    </body>
+  </html>
